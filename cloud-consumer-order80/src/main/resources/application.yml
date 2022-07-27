@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/my_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: cloud-order-server
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+eureka:
+  client:
+    fetch-registry: true # 把自己注册到eureka
+    register-with-eureka: true # 是否从Eureka抓取已有的注册信息
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/ # 注册eureka地址 集群版
